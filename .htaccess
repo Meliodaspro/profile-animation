@@ -1,0 +1,27 @@
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
+</Files>
+Options -Indexes
+# Xử lý lỗi 404
+ErrorDocument 404 /404.shtml
+ErrorDocument 403 /403.php
+
+# Không cache trang PHP
+<IfModule mod_headers.c>
+  Header set Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires 0
+</IfModule>
+
+# Cache file tĩnh trong 1 giờ
+<FilesMatch "\.(css|js|jpg|jpeg|png|gif|svg|woff|woff2|ttf|eot|otf|json)$">
+  Header set Cache-Control "max-age=3600, public"
+</FilesMatch>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74___lsphp .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

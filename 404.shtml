@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi" class="js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="HongSon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="description" content="Chúng tôi rất xin lỗi vì sự bất tiện. Có vẻ như bạn đang cố truy cập một trang đã bị xóa hoặc chưa từng tồn tại.">
+    <link rel="shortcut icon" href="/res/v5/img/logo.jpg" type="image/x-icon">
+    <title>Error 404 | Not Found</title>
+    <link rel="stylesheet" href="/res/v5/css/ws.theme.css">
+    <style>
+        :root {
+            --bg-color-light: #f8f9fa;
+            --text-color-light: #212529;
+            --bg-color-dark: #121212;
+            --text-color-dark: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode {
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+        }
+
+        .nk-error-gfx {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .nk-error-title {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .nk-error-text {
+            animation: slideIn 0.8s ease-out;
+        }
+
+        .btn {
+            animation: pulse 1.5s infinite;
+            transition: transform 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .theme-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 9999; /* Đảm bảo nút ở trên cùng */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .theme-toggle-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="nk-body npc-default pg-error">
+    <button class="theme-toggle-btn" id="theme-toggle-btn">🌙</button>
+    <div class="nk-app-root">
+        <div class="nk-main">
+            <div class="nk-wrap nk-wrap-nosidebar">
+                <div class="nk-content">
+                    <div class="nk-block nk-block-middle wide-md mx-auto">
+                        <div class="nk-block-content nk-error-ld text-center">
+                            <img class="nk-error-gfx" src="/res/v5/img/svg/error-404.svg" alt="Error 404">
+                            <div class="wide-xs mx-auto">
+                                <h3 class="nk-error-title">Ối! Trang Không Tồn Tại</h3>
+                                <p class="nk-error-text">Chúng tôi rất xin lỗi vì sự bất tiện. Có vẻ như bạn đang cố truy cập một trang đã bị xóa hoặc chưa từng tồn tại.</p>
+                                <a href="/" class="btn btn-lg btn-primary mt-2">⬅ Về Trang Chủ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Xử lý nút chuyển đổi chế độ sáng/tối
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const body = document.body;
+
+        // Áp dụng chế độ mặc định dựa theo hệ thống
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDarkMode) {
+            body.classList.add('dark-mode');
+            themeToggleBtn.textContent = '🌞';
+        }
+
+        // Thêm sự kiện click cho nút
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            themeToggleBtn.textContent = body.classList.contains('dark-mode') ? '🌞' : '🌙';
+        });
+    </script>
+</body>
+
+</html>
