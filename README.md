@@ -30,9 +30,6 @@ index.html      # Trang chủ
    ```
 2. Mở file `index.html` bằng trình duyệt (khuyên dùng Live Server hoặc http-server để tránh lỗi import module).
 
-## 🔒 Lưu ý bảo mật
-- **Không commit file chứa secret (như `client_secret.json`) lên repo.**
-- Thêm các file nhạy cảm vào `.gitignore`.
 
 ## 📜 Giấy phép
 MIT License 
