@@ -1,5 +1,7 @@
 # Profile Animation
 
+![Demo Animation](docs/img/demo.gif)
+
 Dự án này là một trang web cá nhân với hiệu ứng animation, hỗ trợ dark/light mode, toast notification, và nhiều tính năng cá nhân hóa.
 
 ## 🚀 Tính năng chính
